@@ -52,7 +52,7 @@
 \newcommand{\taNames}{Muhammad Aleem Shakeel, Muhammad Usman, Muhammad Qasim Ayub, Usman Ahad}
 \newcommand{\dueDate}{Tuesday February 17, 2026}
 \newcommand{\honorPledge}{%
-I affirm that I have abided by the academic integrity policy. I have neither given nor received unauthorized aid on this assignment.
+I affirm that I have abided by the academic integrity policy. I have neither given nor received unauthorized aid on this assignment.\\
 }
 
 % ------------------------------
@@ -135,6 +135,8 @@ I affirm that I have abided by the academic integrity policy. I have neither giv
     \small
     \textbf{Honor Pledge:}\\[2pt]
     \honorPledge
+    \noindent All work, code implementation, and exploratory data analysis for this assignment can be found at the following public GitHub repository: \\
+\url{https://github.com/FaaizKhan1999/ai600-assignments/tree/main/assignment-01}
     \vspace{1.2cm}
   \end{minipage}
 \end{titlepage}
@@ -227,7 +229,7 @@ I affirm that I have abided by the academic integrity policy. I have neither giv
   \end{figure}
   From all the available information above, there are two features that stick out: \texttt{amenity\_score} and \texttt{room\_type}. Looking at the bar chart in Figure \ref{fig:cat-dist}, it is apparent that more than 90\% of listings in class 2 and 3 fall under 'Entire home/apartment' room type. Additionally, looking at the box plots in Figure \ref{fig:num-dist}, the amenity score almost perfectly seperates each price class. Therfore, it stands to reason that the amenity score feature will be both unusually predictive and suspiciously dominant.\\[1em]
   {\large\textbf{Part B(a): Two-Layer Perceptron Implemented from Scratch}}\\
-  A two-layer perceptron was impemented from scratch using only \texttt{NumPy} operations. After programming the \texttt{FFNN} class and defining a \texttt{train} function that performed all the necessary steps required to train a simple neural network, there were still a lot of issues/obstacles that needed to be ironed out. There were multiple tweaks and trial runs before the parameters were set on something that worked for the required task at hand. These are listed below:
+  A two-layer perceptron was implemented from scratch using only \texttt{NumPy} operations. After programming the \texttt{FFNN} class and defining a \texttt{train} function that performed all the necessary steps required to train a simple neural network, there were still a lot of issues/obstacles that needed to be ironed out. There were multiple tweaks and trial runs before the parameters were set on something that worked for the required task at hand. These are listed below:
   \begin{enumerate}
     \item \textbf{The size of the hidden layers:} After multiple trial runs, it was apparent that the required number of neurons in the hidden layer did not need to be an extravagant amount. At the end, each hidden layer ended up with 16 neurons.
     \item \textbf{The number of iterations:} Since the learning rate was kept constant (0.1) throughout the training experiments, the number of iterations needed to be sure that both models would ultimately converge was 1000.
@@ -418,13 +420,18 @@ I affirm that I have abided by the academic integrity policy. I have neither giv
   $$\frac{\partial L}{\partial a^{(2)}}=\frac{\partial L}{\partial y}\odot g'_1(a^{(2)})=\vec{\delta}^{(2)}$$
   $$\frac{\partial a^{(2)}}{\partial b}=I$$
   Continuing with the 'indirect' path:
-  $$\frac{\partial L}{\partial a^{(1)}}=(U^\top\vec{\delta}^{(2)})\odot g'_1(a^{(1)})=\vec{\delta}^{(1)}$$
+  $$\frac{\partial L}{\partial a^{(1)}}=(U^\top\vec{\delta}^{(2)})\odot g(a^{(1)})=\vec{\delta}^{(1)}$$
   $$\frac{\partial a^{(1)}}{\partial b}=I$$
   Putting the two together:
   $$\frac{\partial L}{\partial b}=\vec{\delta}^{(2)}+\vec{\delta}^{(1)}$$
   Or, in terms of $\vec{\delta}^{(2)}$:
-  $$\frac{\partial L}{\partial b}=\vec{\delta}^{(2)}+(U^\top\vec{\delta}^{(2)})\odot g'_1(a^{(1)})$$
-
+  $$\frac{\partial L}{\partial b}=\vec{\delta}^{(2)}+(U^\top\vec{\delta}^{(2)})\odot g(a^{(1)})$$
+  Bias sharing is expected to affect both convergence speed and stability:
+  \begin{itemize}
+    \item Because the gradient is the sum of contributions from multiple paths in bias sharing, the magnitude of updates will be larger, allowing for faster initial learning but making room for instability.
+    \item Bias sharing also couples the transformation of the hidden layer with that of the output layer. This effectively reduces the degrees of freedom and constrains the optimization. Since now the model has to find a single bias that satisfies both layers, the model will likely converge slower to a local minimum.
+    \item The dependency of the output on the same parameter at different depths can affect the conditioning of the Hessian matrix, potentially making the optimisation more difficult.
+  \end{itemize}
 \end{question}
 
 \end{document}
