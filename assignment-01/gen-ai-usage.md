@@ -1,0 +1,3 @@
+I have used Generative AI tools (mostly Gemini) solely as a supplementary educational resource to strengthen my understanding of the core assignment concepts. No part of the final text, analysis, or qualitative conclusions was explicitly generated or copied from these tools; the final narrative and critical thinking remain entirely my own.
+
+For the Jupyter Notebook, I utilized Copilot within VS Code to generate standard boilerplate code. All logic-specific code and data processing steps were manually written and verified to ensure they accurately meet the assignment requirements and reflect my own work.
