@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1775569811.69215 "report.tex" "report.pdf" "report" 1775569812.91426 0
+["pdflatex"] 1775570023.61406 "report.tex" "report.pdf" "report" 1775570024.83717 0
   "/etc/texmf/web2c/texmf.cnf" 1769925286.48941 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/faaiz/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk" 1775301992.72187 7808 707c84181b5138eb4a5e2f65d12c962a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -203,9 +203,9 @@
   "figs/labelled-images.png" 1775569449.70675 341158 fd1daacda8dc18d622cc700c266a142b ""
   "figs/loss-accuracy-curves.png" 1775563217.28504 43919 2f2d576c149d8e006b59f4349207212c ""
   "figs/model-architecture.png" 1775294523.84585 24905 4a315fa684cc667d5fd72d46f86d4dee ""
-  "report.aux" 1775569812.79582 980 1de8443a4230bba6f174d336e13d3d1f "pdflatex"
-  "report.out" 1775569812.46981 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "report.tex" 1775569811.3525 18366 4dfa8951e9381d2d7a1db26e4134aa3d ""
+  "report.aux" 1775570024.72973 980 1de8443a4230bba6f174d336e13d3d1f "pdflatex"
+  "report.out" 1775570024.40672 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "report.tex" 1775570022.01869 18366 e5699ff0cd58cc8258cfdefd372ebb65 ""
   (generated)
   "report.aux"
   "report.log"
